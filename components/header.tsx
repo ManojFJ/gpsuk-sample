@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Phone, ChevronDown, Menu, X, Star } from 'lucide-react';
+import { Search, Phone, Menu, X, Star } from 'lucide-react';
 import Link from 'next/link';
 
 const utilityLeft = [
@@ -70,10 +70,9 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="flex items-center gap-1 text-base text-[#1A1A1A] hover:text-brand-blue transition-colors font-medium"
+              className="text-base text-[#1A1A1A] hover:text-brand-blue transition-colors font-medium"
             >
               {link.label}
-              <ChevronDown className="w-3.5 h-3.5 opacity-50" />
             </Link>
           ))}
         </nav>
