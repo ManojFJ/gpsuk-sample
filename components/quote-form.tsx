@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 import { CheckCircle, Loader2 } from 'lucide-react';
 
 const productInterests = [
@@ -38,7 +38,10 @@ export default function QuoteForm() {
     if (!canSubmit) return;
     setLoading(true);
     try {
-      await supabase.from('inquiries').insert([form]);
+      const supabase = getSupabase();
+      if (supabase) {
+        await supabase.from('inquiries').insert([form]);
+      }
       setSuccess(true);
     } catch {
       setSuccess(true);

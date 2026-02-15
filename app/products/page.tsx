@@ -74,13 +74,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative h-[340px] md:h-[400px] overflow-hidden">
-        <img
-          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Products hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
+      <section className="relative h-[340px] md:h-[400px] overflow-hidden bg-[#0C1B2E]">
         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
           <p className="text-brand-orange text-sm font-semibold uppercase tracking-wider mb-2">
             One-Stop Shop for Promotional Products

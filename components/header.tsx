@@ -11,7 +11,7 @@ const utilityLeft = [
 ];
 
 const utilityRight = [
-  { label: 'Request Quote', href: '/products#contact' },
+  { label: 'Request Quote', href: '/products' },
   { label: 'Our Products', href: '/products' },
   { label: 'About Us', href: '/about' },
   { label: 'FAQs', href: '/products#faq' },
@@ -21,7 +21,7 @@ const primaryNav = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/products#contact' },
+  { label: 'Contact', href: '/products' },
 ];
 
 const marqueeItems = [
@@ -113,7 +113,7 @@ export default function Header() {
             View Products
           </Link>
           <Link
-            href="/products#contact"
+            href="/products"
             className="inline-flex h-[34px] px-4 rounded-full bg-[#0F0F10] text-white text-sm items-center gap-2 hover:bg-[#2a2a2b] transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
@@ -161,7 +161,7 @@ export default function Header() {
             ))}
           </div>
           <Link
-            href="/products#contact"
+            href="/products"
             className="block text-center h-10 leading-10 rounded-full bg-brand-blue text-white text-sm font-semibold"
             onClick={() => setMobileOpen(false)}
           >

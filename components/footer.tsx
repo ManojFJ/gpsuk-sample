@@ -41,22 +41,22 @@ export default function Footer() {
                 <span className="text-[8px] font-bold text-brand-orange leading-none">GPS</span>
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">
+                <span className="text-lg font-bold tracking-tight text-black">
                   GPS<span className="text-brand-blue">UK</span>
                 </span>
               </div>
             </Link>
-            <p className="text-xs text-black/50 max-w-[220px] leading-relaxed">
+            <p className="text-xs text-black max-w-[220px] leading-relaxed">
               Your one-stop shop for high-quality promotional products worldwide. Elevate your brand with impactful merchandise.
             </p>
           </div>
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-semibold text-[#1A1A1A] mb-3">{col.title}</h4>
+              <h4 className="text-sm font-semibold text-black mb-3">{col.title}</h4>
               <ul className="space-y-2">
                 {col.items.map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="text-sm text-black/50 hover:text-brand-blue transition-colors">
+                    <Link href={item.href} className="text-sm text-black hover:text-brand-blue transition-colors">
                       {item.label}
                     </Link>
                   </li>
@@ -66,10 +66,10 @@ export default function Footer() {
           ))}
         </div>
         <div className="border-t border-black/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-xs text-black/40">
+          <span className="text-xs text-black">
             &copy; {year} GPSUK - Global Promotional Services
           </span>
-          <div className="flex items-center gap-4 text-xs text-black/40">
+          <div className="flex items-center gap-4 text-xs text-black">
             <Link href="#" className="hover:text-brand-blue transition-colors">Privacy</Link>
             <Link href="#" className="hover:text-brand-blue transition-colors">Terms</Link>
             <Link href="#" className="hover:text-brand-blue transition-colors">Cookies</Link>

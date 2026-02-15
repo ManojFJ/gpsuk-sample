@@ -9,19 +9,31 @@ const slides = [
     subtitle: 'One-Stop Shop for Promotional Products Worldwide',
     title: 'Global Promotional Services',
     desc: 'Upgrade Your Brand With Quality Promotional Products \u2013 Your Global Source for Impactful Marketing Merchandise!',
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/Rectangle-609-2048x2048.png',
   },
   {
     subtitle: 'High Quality Customizable Merchandise',
     title: 'Elevate Your Brand',
     desc: 'From branded essentials to luxury promotional items, we deliver products that leave a lasting impression on your audience.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/Rectangle-611-2048x2048.png',
   },
   {
     subtitle: 'Serving Businesses Across 15+ Countries',
     title: 'Worldwide Delivery',
     desc: 'Fast, reliable service with short lead times. Your promotional products delivered on time, every time.',
-    image: 'https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/Rectangle-612-2048x2048.png',
+  },
+  {
+    subtitle: 'Custom Branded Accessories',
+    title: 'Lanyard Solutions',
+    desc: 'Wide range of lanyard clips, hooks and buckles in every colour to match your brand identity.',
+    image: '/Rectangle-613-2048x2048.png',
+  },
+  {
+    subtitle: 'Boost Your Brand Visibility',
+    title: 'Custom Wristbands',
+    desc: 'Eye-catching silicone wristbands with your logo \u2013 perfect for events, campaigns, and promotions.',
+    image: '/Rectangle-409-2048x2048.png',
   },
 ];
 
@@ -39,60 +51,68 @@ export default function Hero() {
   const next = () => setCurrent((c) => (c + 1) % slides.length);
 
   return (
-    <section className="relative h-[400px] md:h-[460px] overflow-hidden">
+    <section className="relative h-[400px] md:h-[460px] overflow-hidden bg-[#0C1B2E]">
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-700"
+          className="absolute inset-0 transition-opacity duration-700 flex"
           style={{ opacity: i === current ? 1 : 0 }}
         >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/45" />
+          {/* Left side: text */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 z-10 relative">
+            <p className="text-brand-orange text-sm font-semibold uppercase tracking-wider mb-2">
+              {slide.subtitle}
+            </p>
+            <h1 className="text-3xl md:text-[48px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-4">
+              {slide.title}
+            </h1>
+            <p className="text-sm md:text-base text-white/80 mb-7 max-w-md leading-relaxed">
+              {slide.desc}
+            </p>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/products#contact"
+                className="h-[42px] px-6 rounded-full bg-brand-blue text-white text-sm font-semibold inline-flex items-center hover:bg-brand-blue-dark transition-colors"
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/products"
+                className="h-[42px] px-6 rounded-full bg-white/15 border border-white/30 text-white text-sm font-medium inline-flex items-center hover:bg-white/25 transition-colors backdrop-blur-sm"
+              >
+                View Products
+              </Link>
+            </div>
+          </div>
+          {/* Right side: product image */}
+          <div className="hidden md:flex w-1/2 items-center justify-center relative">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="max-h-[380px] max-w-[90%] object-contain drop-shadow-2xl"
+            />
+          </div>
+          {/* Mobile background image */}
+          <div className="absolute inset-0 md:hidden">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="absolute right-0 top-1/2 -translate-y-1/2 h-[70%] object-contain opacity-20"
+            />
+          </div>
         </div>
       ))}
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <div className="max-w-[760px]">
-          <p className="text-brand-orange text-sm font-semibold uppercase tracking-wider mb-2">
-            {slides[current].subtitle}
-          </p>
-          <h1 className="text-4xl md:text-[56px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-4">
-            {slides[current].title}
-          </h1>
-          <p className="text-base text-white/80 mb-7 max-w-xl mx-auto leading-relaxed">
-            {slides[current].desc}
-          </p>
-          <div className="flex items-center justify-center gap-3">
-            <Link
-              href="/products#contact"
-              className="h-[42px] px-6 rounded-full bg-brand-blue text-white text-sm font-semibold inline-flex items-center hover:bg-brand-blue-dark transition-colors"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/products"
-              className="h-[42px] px-6 rounded-full bg-white/80 border border-white/30 text-[#1A1A1A] text-sm font-medium inline-flex items-center hover:bg-white transition-colors backdrop-blur-sm"
-            >
-              View Products
-            </Link>
-          </div>
-        </div>
-      </div>
-
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[34px] rounded-full bg-black/25 text-white flex items-center justify-center hover:bg-black/40 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[34px] rounded-full bg-white/15 text-white flex items-center justify-center hover:bg-white/25 transition-colors"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[34px] rounded-full bg-black/25 text-white flex items-center justify-center hover:bg-black/40 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-[34px] h-[34px] rounded-full bg-white/15 text-white flex items-center justify-center hover:bg-white/25 transition-colors"
         aria-label="Next slide"
       >
         <ChevronRight className="w-5 h-5" />

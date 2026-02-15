@@ -34,21 +34,34 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className="relative h-[320px] md:h-[380px] overflow-hidden">
-        <img
-          src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="About us"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-          <p className="text-brand-orange text-sm font-semibold uppercase tracking-wider mb-2">About Us</p>
-          <h1 className="text-4xl md:text-[52px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-3">
-            Reliable Promotional Merchandise Distributors
-          </h1>
-          <p className="text-base text-white/75 max-w-lg mx-auto">
-            Get to know your trusted partner for the distribution of premium promotional merchandise.
-          </p>
+      <section className="relative h-[320px] md:h-[380px] overflow-hidden bg-[#0C1B2E]">
+        <div className="absolute inset-0 flex">
+          {/* Left side: text */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 z-10 relative">
+            <p className="text-brand-orange text-sm font-semibold uppercase tracking-wider mb-2">About Us</p>
+            <h1 className="text-3xl md:text-[48px] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-3">
+              Reliable Promotional Merchandise Distributors
+            </h1>
+            <p className="text-sm md:text-base text-white/80 max-w-md leading-relaxed">
+              Get to know your trusted partner for the distribution of premium promotional merchandise.
+            </p>
+          </div>
+          {/* Right side: product image */}
+          <div className="hidden md:flex w-1/2 items-center justify-center relative">
+            <img
+              src="/Group-15-1024x928.png"
+              alt="About us"
+              className="max-h-[340px] max-w-[90%] object-contain drop-shadow-2xl"
+            />
+          </div>
+          {/* Mobile background image */}
+          <div className="absolute inset-0 md:hidden">
+            <img
+              src="/Group-15-1024x928.png"
+              alt="About us"
+              className="absolute right-0 top-1/2 -translate-y-1/2 h-[70%] object-contain opacity-20"
+            />
+          </div>
         </div>
       </section>
 
