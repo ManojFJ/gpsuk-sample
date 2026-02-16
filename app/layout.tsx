@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'GPSUK - Real-Time GPS Tracking for Fleets, Assets & Deliveries',
   description:
-    'Live GPS tracking, geofencing, alerts, reports, and driver behavior monitoring. Built for operations teams worldwide. Get a quote today.',
+    'One Stop shop for Promotional Products Worldwide.',
 };
 
 export default function RootLayout({
