@@ -18,14 +18,6 @@ const columns = [
       { label: 'Drinkware', href: '/products' },
     ],
   },
-  {
-    title: 'Resources',
-    items: [
-      { label: 'FAQs', href: '/products#faq' },
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms & Conditions', href: '#' },
-    ],
-  },
 ];
 
 export default function Footer() {

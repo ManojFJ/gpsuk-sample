@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Phone, Menu, X, Star } from 'lucide-react';
+import { Phone, Menu, X, Star } from 'lucide-react';
 import Link from 'next/link';
 
 const utilityLeft = [
@@ -100,12 +100,6 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-3">
-          <button
-            className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-black/5 transition-colors"
-            aria-label="Search"
-          >
-            <Search className="w-[18px] h-[18px] text-[#1A1A1A]" />
-          </button>
           <Link
             href="/products"
             className="hidden sm:inline-flex h-[34px] px-4 rounded-full bg-brand-blue text-white text-sm font-semibold items-center hover:bg-brand-blue-dark transition-colors"

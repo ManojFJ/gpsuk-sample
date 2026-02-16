@@ -2,45 +2,8 @@
 
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const products = [
-  {
-    title: 'Custom Branded Pens',
-    subtitle: 'Premium writing instruments',
-    tag: 'Best Seller',
-    image: '/Custom Branded Pens4245-1536x1024.jpg',
-  },
-  {
-    title: 'Eco-Friendly Tote Bags',
-    subtitle: 'Sustainable branded bags',
-    tag: 'Eco',
-    image: '/eco-friendly tote bags 85-23-1536x1024.png',
-  },
-  {
-    title: 'Branded Drinkware',
-    subtitle: 'Mugs, bottles & tumblers',
-    tag: 'Popular',
-    image: '/Branded Drinkware-85-17-1536x1024.png',
-  },
-  {
-    title: 'Custom Lanyards',
-    subtitle: 'Events & conferences',
-    tag: 'Events',
-    image: '/Custom Lanyards RSB4262-1536x1024.jpg',
-  },
-  {
-    title: 'Tech Accessories',
-    subtitle: 'Earphones, chargers & more',
-    tag: 'Tech',
-    image: '/tech-images -71-1024x1024.png',
-  },
-  {
-    title: 'Corporate Gift Sets',
-    subtitle: 'Premium curated bundles',
-    tag: 'Premium',
-    image: '/corporate gift sett.jfif',
-  },
-];
+import Link from 'next/link';
+import { products } from '@/lib/products';
 
 export default function ProductCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -87,8 +50,9 @@ export default function ProductCarousel() {
         style={{ scrollbarWidth: 'none' }}
       >
         {products.map((product) => (
-          <div
-            key={product.title}
+          <Link
+            key={product.slug}
+            href={`/products/${product.slug}`}
             className="flex-shrink-0 w-[210px] h-[270px] rounded-[28px] overflow-hidden relative snap-start group cursor-pointer"
           >
             <img
@@ -108,7 +72,7 @@ export default function ProductCarousel() {
               </h3>
               <p className="text-white/70 text-xs">{product.subtitle}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
